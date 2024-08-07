@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ToyRobotApp
 {
@@ -29,6 +26,8 @@ namespace ToyRobotApp
             robot.Move();
             Console.WriteLine($"After Move: {robot.Report()}");
 
+            Console.WriteLine("Press Enter to exit...");
+            Console.ReadLine();
         }
     }
 }

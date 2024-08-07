@@ -1,0 +1,8 @@
+C:\Users\61448\source\repos\Toy-Robot\ToyRobotApp\ToyRobotApp\bin\Debug\ToyRobotApp.exe.config
+C:\Users\61448\source\repos\Toy-Robot\ToyRobotApp\ToyRobotApp\bin\Debug\ToyRobotApp.exe
+C:\Users\61448\source\repos\Toy-Robot\ToyRobotApp\ToyRobotApp\bin\Debug\ToyRobotApp.pdb
+C:\Users\61448\source\repos\Toy-Robot\ToyRobotApp\ToyRobotApp\obj\Debug\ToyRobotApp.csproj.AssemblyReference.cache
+C:\Users\61448\source\repos\Toy-Robot\ToyRobotApp\ToyRobotApp\obj\Debug\ToyRobotApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\61448\source\repos\Toy-Robot\ToyRobotApp\ToyRobotApp\obj\Debug\ToyRobotApp.csproj.CoreCompileInputs.cache
+C:\Users\61448\source\repos\Toy-Robot\ToyRobotApp\ToyRobotApp\obj\Debug\ToyRobotApp.exe
+C:\Users\61448\source\repos\Toy-Robot\ToyRobotApp\ToyRobotApp\obj\Debug\ToyRobotApp.pdb
