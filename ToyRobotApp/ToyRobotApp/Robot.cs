@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace ToyRobotApp
 {
     public class Robot
@@ -9,6 +8,7 @@ namespace ToyRobotApp
         private int posX;
         private int posY;
         private string heading;
+        private bool isPlaced;
         private static readonly string[] validHeadings = { "NORTH", "SOUTH", "EAST", "WEST" };
 
         public Robot()
@@ -17,6 +17,7 @@ namespace ToyRobotApp
             posX = 0;
             posY = 0;
             heading = "NORTH";
+            isPlaced = false;
         }
 
         public void Place(int x, int y, string f)
@@ -27,6 +28,7 @@ namespace ToyRobotApp
                 posX = x;
                 posY = y;
                 heading = f;
+                isPlaced = true;
             }
             else
             {
@@ -108,7 +110,7 @@ namespace ToyRobotApp
         public void Move()
         {
             // moves forward if valid move or stays still
-            if (IsMoveValid())
+            if (IsPlaced && IsMoveValid())
             {
                 MoveRobot();
             }
@@ -116,28 +118,35 @@ namespace ToyRobotApp
 
         public void Left()
         {
+            if (!IsPlaced) return;
             // turns robot counterclockwise
             var d = new Dictionary<string, string>
-        {
-            {"WEST", "SOUTH"},
-            {"SOUTH", "EAST"},
-            {"EAST", "NORTH"},
-            {"NORTH", "WEST"}
-        };
+            {
+                {"WEST", "SOUTH"},
+                {"SOUTH", "EAST"},
+                {"EAST", "NORTH"},
+                {"NORTH", "WEST"}
+            };
             heading = d[heading];
         }
 
         public void Right()
         {
+            if (!IsPlaced) return;
             // turns robot clockwise
             var d = new Dictionary<string, string>
-        {
-            {"WEST", "NORTH"},
-            {"NORTH", "EAST"},
-            {"EAST", "SOUTH"},
-            {"SOUTH", "WEST"}
-        };
+            {
+                {"WEST", "NORTH"},
+                {"NORTH", "EAST"},
+                {"EAST", "SOUTH"},
+                {"SOUTH", "WEST"}
+            };
             heading = d[heading];
         }
+
+        public bool IsPlaced
+        {
+            get { return isPlaced; }
+        }
     }
-    }
+}
