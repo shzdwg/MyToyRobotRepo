@@ -9,7 +9,7 @@ namespace ToyRobotApp
         {
             Robot robot = new Robot();
 
-            if (args.Length > 0)
+            if (args.Length > 0 && File.Exists(args[0]))
             {
                 // Process commands from a file
                 var lines = File.ReadAllLines(args[0]);
