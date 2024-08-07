@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+
 
 namespace ToyRobotApp
 {
@@ -7,9 +9,11 @@ namespace ToyRobotApp
         private int posX;
         private int posY;
         private string heading;
+        private static readonly string[] validHeadings = { "NORTH", "SOUTH", "EAST", "WEST" };
 
         public Robot()
         {
+            // sets up default robot placement and heading
             posX = 0;
             posY = 0;
             heading = "NORTH";
@@ -17,16 +21,41 @@ namespace ToyRobotApp
 
         public void Place(int x, int y, string f)
         {
-            if ((x >= 0 && x <= 4) && (y >= 0 && y <= 4))
+            // places robot on the grid at x,y with heading f
+            if (IsPositionValid(x, y) && IsHeadingValid(f))
             {
                 posX = x;
                 posY = y;
                 heading = f;
             }
+            else
+            {
+                throw new ArgumentException("Invalid position or direction");
+            }
+        }
+
+        private bool IsPositionValid(int x, int y)
+        {
+            // checks that position exists on the 5x5 board
+            return (x >= 0 && x <= 4) && (y >= 0 && y <= 4);
+        }
+
+        private bool IsHeadingValid(string f)
+        {
+            // ensures one of the 4 valid headings are provided by the incoming commands
+            foreach (var heading in validHeadings)
+            {
+                if (heading == f)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool IsMoveValid()
         {
+            // asserts that robot is not about to move out of bounds
             if (heading == "WEST" && posX > 0)
             {
                 return true;
@@ -51,6 +80,7 @@ namespace ToyRobotApp
 
         public (int, int, string) Report()
         {
+            // returns robot location and heading
             return (posX, posY, heading);
         }
 
@@ -77,7 +107,7 @@ namespace ToyRobotApp
 
         public void Move()
         {
-            // moves forward if valid or stays still
+            // moves forward if valid move or stays still
             if (IsMoveValid())
             {
                 MoveRobot();
@@ -86,8 +116,8 @@ namespace ToyRobotApp
 
         public void Left()
         {
-            // turns robot left
-            var d = new System.Collections.Generic.Dictionary<string, string>
+            // turns robot counterclockwise
+            var d = new Dictionary<string, string>
         {
             {"WEST", "SOUTH"},
             {"SOUTH", "EAST"},
@@ -99,8 +129,8 @@ namespace ToyRobotApp
 
         public void Right()
         {
-            // turns robot right
-            var d = new System.Collections.Generic.Dictionary<string, string>
+            // turns robot clockwise
+            var d = new Dictionary<string, string>
         {
             {"WEST", "NORTH"},
             {"NORTH", "EAST"},

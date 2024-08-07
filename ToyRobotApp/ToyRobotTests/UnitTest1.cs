@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using ToyRobotApp;
 
 namespace ToyRobotTests
@@ -23,12 +24,12 @@ namespace ToyRobotTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Invalid position or direction")]
         public void TestPlaceInvalidCoordinates()
         {
             robot.Place(5, 5, "NORTH");
-            var report = robot.Report();
-            Assert.AreNotEqual((5, 5, "NORTH"), report);
         }
+       
 
         [TestMethod]
         public void TestMoveValid()
