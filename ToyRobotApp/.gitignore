@@ -1,0 +1,117 @@
+# Ignore Visual Studio temporary files, build results, and
+# build logs.
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Ll]ogFiles/
+[Oo]ut/
+[Oo]utput/
+msbuild.log
+msbuild.err
+msbuild.wrn
+msbuild.*
+doxygen-log.txt
+
+# Visual Studio 2019 directory
+.vscode/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file for code
+.vs/
+.vscode/
+
+# Rider temp files
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# DotNetConsoleApp
+ToyRobotApp/bin/
+ToyRobotApp/obj/
+**/bin/
+**/obj/
+*.dll
+*.pdb
+*.exe
+*.app
+*.app.debug
+*.app.publish
+*.log
+*.lib
+*.lib.debug
+*.lib.publish
+*.cache
+
+# Local .NET Core SDK
+.dotnet/
+
+# StyleCop
+StyleCopReport.xml
+
+# dotCover Coverage Results
+*.dcvr
+
+# NCrunch
+_ncrunch_*
+*.ncrunchproject
+
+# Coverage Results
+*.coverage
+*.coveragexml
+
+# Web Assembly
+*.wasm
+*.js.map
+*.wasm.map
+*.js
+*.asm.code.unityweb
+*.asm.framework.unityweb
+*.asm.data.unityweb
+*.asm.ssymbolmap
+
+# Browser-based storage
+.localStorage
+.localStorage-journal
+.plist
+
+# Others
+.benchmarkDotNet/
+.secret/
+*.vs
+.vscode/
+.vs/
+
+# Ignore all files ending with .env
+*.env
+
+# macOS
+.DS_Store
+
+# Linux
+*~
